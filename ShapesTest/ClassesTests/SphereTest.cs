@@ -1,0 +1,57 @@
+﻿using NUnit.Framework;
+using Shapes.Classes.Concrete;
+using System;
+
+namespace ShapesTest.ClassesTests
+{
+    [TestFixture]
+    public class SphereTest
+    {
+        int testRadius = 5;
+
+        [Test]
+        public void constructorReturnsSphereTest()
+        {
+            Sphere sphere = new Sphere(testRadius);
+            Assert.IsInstanceOf<Sphere>(sphere);
+        }
+        [Test]
+        public void constructorDefaultsPropertiesToOneTest()
+        {
+            Sphere sphere = new Sphere(0);
+            Assert.AreEqual(1, sphere.radius);
+        }
+
+        [Test]
+        public void radiusSetterTest()
+        {
+            Sphere sphere = new Sphere(testRadius);
+            Assert.AreEqual(testRadius, sphere.radius);
+        }
+
+        [Test]
+        public void radiusGetterTest()
+        {
+            Sphere sphere = new Sphere(testRadius);
+            Assert.AreEqual(testRadius, sphere.radius);
+        }
+
+        [Test]
+        public void surfaceAreaTest()
+        {
+            float expectedSurfaceArea = (float)Math.Round(4 * Math.PI * Math.Pow(testRadius, 2), 2);
+            Sphere sphere = new Sphere(testRadius);
+
+            Assert.AreEqual(expectedSurfaceArea, sphere.surfaceArea());
+        }
+
+        [Test]
+        public void volumeTest()
+        {
+            float expectedVolume = (float)Math.Round((4 / 3) * Math.PI * Math.Pow(testRadius, 3), 2);
+            Sphere sphere = new Sphere(testRadius);
+
+            Assert.AreEqual(expectedVolume, sphere.volume());
+        }
+    }
+}
