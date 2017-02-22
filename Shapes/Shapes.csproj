@@ -63,11 +63,14 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Classes\Abstract\IShape.cs" />
+    <Compile Include="Classes\Abstract\IDialog.cs" />
+    <Compile Include="Classes\Abstract\IRenderer.cs" />
+    <Compile Include="Classes\Abstract\Shape.cs" />
+    <Compile Include="Classes\Concrete\MessageBox.cs" />
     <Compile Include="Classes\Concrete\Cuboid.cs" />
     <Compile Include="Classes\Concrete\Cylinder.cs" />
     <Compile Include="Classes\Concrete\Sphere.cs" />
-    <Compile Include="Classes\ShapeTest.cs" />
+    <Compile Include="Classes\Main.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

@@ -24,7 +24,7 @@ namespace Shapes
         public MainWindow()
         {
             InitializeComponent();
-            ShapeTest shapeTest = new ShapeTest();
+            Main shapeTest = new Main();
             shapeTest.main();
         }
     }
