@@ -8,13 +8,9 @@ namespace Shapes.Classes.Concrete
     public class Sphere : Shape, IRenderer
     {
         // Constructor that accepts the dimensions of the Sphere as an arguement.
-        public Sphere(IDialog messageBox, float radius) : base(messageBox)
+        public Sphere(IDialog messageBox, float radius = 1) : base(messageBox)
         {
-            if (radius <= 0 || float.IsNaN(radius))
-            {
-                radius = 1;
-            }
-            this.radius = radius;
+            this.radius = (radius <= 0 || float.IsNaN(radius)) ? 1 : radius;
             this.messageBox = messageBox;
         }
 

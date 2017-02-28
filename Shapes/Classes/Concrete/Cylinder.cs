@@ -7,19 +7,10 @@ namespace Shapes.Classes.Concrete
     public class Cylinder : Shape, IRenderer
     {
         // Constructor that accepts the dimensions of the Cylinder as an arguement.
-        public Cylinder(IDialog messageBox, float height, float radius) : base(messageBox)
+        public Cylinder(IDialog messageBox, float height = 1, float radius = 1) : base(messageBox)
         {
-            if (height <= 0 || 
-                radius <= 0 || 
-                float.IsNaN(height) || 
-                float.IsNaN(radius))
-            {
-                this.height = 1;
-                this.radius = 1;
-                return;
-            }
-            this.height = height;
-            this.radius = radius;
+            this.height = (height <= 0 || float.IsNaN(height)) ? 1 : height;
+            this.radius = (radius <= 0 || float.IsNaN(radius)) ? 1 : radius;
             this.messageBox = messageBox;
         }
 

@@ -8,10 +8,11 @@ namespace Shapes.Classes
         public void main()
         {
             IDialog messageBox = new MessageBox();
+            ShapeFactory shapeFactory = new ShapeFactory(messageBox);
 
-            Cuboid cuboid = new Cuboid(messageBox, 2, 3, 4);
-            Cylinder cylinder = new Cylinder(messageBox, 2, 3);
-            Sphere sphere = new Sphere(messageBox, 2);
+            Cuboid cuboid = (Cuboid)shapeFactory.make(ShapeType.Cuboid);
+            Cylinder cylinder = (Cylinder)shapeFactory.make(ShapeType.Cylinder);
+            Sphere sphere = (Sphere)shapeFactory.make(ShapeType.Sphere);
 
             cuboid.render();
             cylinder.render();

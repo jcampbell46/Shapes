@@ -5,26 +5,14 @@ using Shapes.Classes.Abstract;
 namespace Shapes.Classes.Concrete
 {
     // Class that creating a three-dimensional Cuboid object. Implements IShape.
-    public class Cuboid : Shape
+    public class Cuboid : Shape, IRenderer
     {
         // Constructor that accepts the dimensions of the Cuboid as an arguement.
-        public Cuboid(IDialog messageBox, float width, float height, float depth) : base(messageBox)
+        public Cuboid(IDialog messageBox, float width = 1, float height = 1, float depth = 1) : base(messageBox)
         {
-            if (width <= 0 || 
-                height <= 0 || 
-                depth <= 0 ||
-                float.IsNaN(width) ||
-                float.IsNaN(height) ||
-                float.IsNaN(depth))
-            {
-                this.width = 1;
-                this.height = 1;
-                this.depth = 1;
-                return;
-            }
-            this.width = width;
-            this.height = height;
-            this.depth = depth;
+            this.width = (width <= 0 || float.IsNaN(width)) ? 1 : width;
+            this.height = (height <= 0 || float.IsNaN(height)) ? 1 : height;
+            this.depth = (depth <= 0 || float.IsNaN(depth)) ? 1 : depth;
             this.messageBox = messageBox;
         }
 

@@ -66,6 +66,7 @@
     <Compile Include="Classes\Abstract\IDialog.cs" />
     <Compile Include="Classes\Abstract\IRenderer.cs" />
     <Compile Include="Classes\Abstract\Shape.cs" />
+    <Compile Include="Classes\Abstract\ShapeFactory.cs" />
     <Compile Include="Classes\Concrete\MessageBox.cs" />
     <Compile Include="Classes\Concrete\Cuboid.cs" />
     <Compile Include="Classes\Concrete\Cylinder.cs" />
